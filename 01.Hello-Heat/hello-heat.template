@@ -1,0 +1,9 @@
+heat_template_version: 2013-05-23
+
+resources:
+  compute_instance: 
+    type: "Rackspace::Cloud::Server"
+    properties:
+      flavor: 512MB Standard Instance
+      image: CentOS 6.4
+      name: Pablo's Measely Compute Instance
