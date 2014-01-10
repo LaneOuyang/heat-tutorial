@@ -1,5 +1,6 @@
 # Spinning Up Stacks Using Heat (tl;dr remix)
-## Author: Pablo <paul.nelson@rackspace.com>
+## tl;dr remix
+### Author: Pablo <paul.nelson@rackspace.com>
 
 This repo is intended to provide a growing list of hands-on tutorials that each can be completed in 20 minutes or less, which start as simple as possible and continually build on the knowledge gained in previous tutorials.
 
