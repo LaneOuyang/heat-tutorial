@@ -24,7 +24,9 @@ _If you're using a Mac, [homebrew](http://brew.sh/) is your friend._
 </br>
 ### 2. This guide uses python-heatclient, so...
 
-        pip install python-heatclient
+```shell
+pip install python-heatclient
+```
 
 _If you're __not__ using a virtual environment, you may need to start the above incantation with [sudo](http://xkcd.com/149/)._
 
@@ -33,25 +35,31 @@ More about python-heat-client can be found in [OpenStack's documentation](http:/
 </br>
 ### 3. >>Sanity Check<< Command Line Works
 
-        heat help
+```shell
+heat help
+```
 
 This should give you a long list of all the options available from the heat command
 </br>
 </br>
 ### 4. Environment Variables Make Things Easier
 
-        OS_USERNAME="<your-rackspace-cloud-account-username>"
-        OS_PASSWORD="<your-rackspace-cloud-account-password>"
-        OS_TENANT_ID="<your-rackspace-cloud-account-tenant-id>"
-        OS_AUTH_URL="https://identity.api.rackspacecloud.com/v2.0/"
-        HEAT_URL="https://iad.orchestration.api.rackspacecloud.com/v1/${OS_TENANT_ID}"
+```shell
+OS_USERNAME="<your-rackspace-cloud-account-username>"
+OS_PASSWORD="<your-rackspace-cloud-account-password>"
+OS_TENANT_ID="<your-rackspace-cloud-account-tenant-id>"
+OS_AUTH_URL="https://identity.api.rackspacecloud.com/v2.0/"
+HEAT_URL="https://iad.orchestration.api.rackspacecloud.com/v1/${OS_TENANT_ID}"
+```
 
 _Refer to your particular OS for details on how to setup environment variables. These can also be passed as command line parameters if you're the type that enjoys things like pokes in the eye with sharp sticks._
 </br>
 </br>
 ### 5. >>Sanity Check<< Local Env
 
-        heat -k stack-list
+```shell
+heat -k stack-list
+```
 
 This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list.
 </br>
