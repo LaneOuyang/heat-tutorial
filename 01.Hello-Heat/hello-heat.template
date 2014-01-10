@@ -4,6 +4,6 @@ resources:
   compute_instance: 
     type: "Rackspace::Cloud::Server"
     properties:
-      flavor: 512MB Standard Instance
+      flavor: 1GB Standard Instance
       image: CentOS 6.4
       name: Pablo's Measely Compute Instance

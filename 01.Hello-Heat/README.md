@@ -1,5 +1,5 @@
 # Hello World Stack
-## Author: Paul Nelson <paul.nelson@rackspace.com>
+## Author: Pablo <paul.nelson@rackspace.com>
 </br>
 ### 1. >>Sanity Check<< Local Env
 
