@@ -19,7 +19,7 @@ Use your favorite editor to create this file (named 'hello-heat.template'):
           compute_instance:
             type: "Rackspace::Cloud::Server"
             properties:
-              flavor: 512MB Standard Instance
+              flavor: 1GB Standard Instance
               image: CentOS 6.4
               name: Simplest Stack In The World
 </br>
