@@ -7,7 +7,7 @@
 heat -k stack-list
 ```
 
-This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list. If this isn't working you might need to revisit the [README.md at the root of this repo](heat-tutorial).
+This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list. If this isn't working you might need to revisit the [README.md at the root of this repo](heat-tutorial/blob/master).
 </br>
 </br>
 ### 2. The world's simplest Heat Orchestration Template (HOT)
