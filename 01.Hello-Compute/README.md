@@ -56,3 +56,12 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 </br>
 </br>
 ### 6. CONGRATULATIONS! You're Done!
+
+__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list (required properties in __bold__):
+
+  * __flavor__
+  * __image__
+  * user_data
+  * key_name
+  * Volumes
+  * name
