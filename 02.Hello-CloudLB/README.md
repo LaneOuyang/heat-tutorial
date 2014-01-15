@@ -35,7 +35,7 @@ resources:
       port: 80
       virtualIps:
       - type: PUBLIC
-``
+```
 </br>
 ### 3. Spin It Up!
 
