@@ -27,7 +27,6 @@ resources:
         delay: 10
         timeout: 120
         type: HTTP
-        statusRegex: "."
       nodes:
       - condition: ENABLED
         port: 80
