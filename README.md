@@ -35,7 +35,7 @@ _If you're using a Mac, [homebrew](http://brew.sh/) is your friend._
 pip install python-heatclient
 ```
 
-_If you're __not__ using a virtual environment, you may need to start the above incantation with [sudo](http://xkcd.com/149/)._
+_If you're **not** using a virtual environment, you may need to start the above incantation with [sudo](http://xkcd.com/149/)._
 
 More about python-heat-client can be found in [OpenStack's documentation](http://docs.openstack.org/developer/python-heatclient/).
 </br>
