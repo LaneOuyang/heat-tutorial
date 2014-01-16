@@ -57,11 +57,13 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list (required properties in __bold__):
+__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
-  * __flavor__
-  * __image__
-  * user_data
-  * key_name
-  * Volumes (value type is a List)
-  * name
+```yaml
+flavor: 1GB Standard Instance     # REQUIRED. Check Rackspace documentation for valid flavors.
+image: CentOS 6.4                 # REQUIRED. Check Rackspace documentation for valid images.
+user_data: "some-valid-id-string"
+key_name: name-of-your-key-pair
+Volumes:                          # Value must be a List.
+name: Your Cloud Server Name
+```
