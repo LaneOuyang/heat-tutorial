@@ -54,10 +54,13 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud Database: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/clouddatabase.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list (required properties in __bold__, ranges in parenthesis):
+__Cloud Database: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/clouddatabase.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
-  * __InstanceName__
-  * __FlavorRef__
-  * __VolumeSize__ (1 - 150)
-  * Databases
-  * Users
+```yaml
+InstanceName: Your Cloud Database Name # REQUIRED. 255 max characters.
+FlavorRef: 1GB Instance # REQUIRED. Valid values: 1GB Instance, 2GB Instance, 4GB Instance, 8GB Instance, 16GB Instance
+VolumeSize: # REQUIRED. Valid values: 1 - 150
+Databases: # Value must be a List.
+- Character_set: utf8 # Valid values: 
+Users: 
+```
