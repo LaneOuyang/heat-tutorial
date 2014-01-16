@@ -73,4 +73,4 @@ This should return a list of all of your stacks. If this is your first time usin
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-If you're not sure where to go next, try [the first tutorial](/100.Hello-Compute).
+If you're not sure where to go next, try [the first tutorial](/heat-tutorial/blob/master/100.Hello-Compute).
