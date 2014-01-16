@@ -4,6 +4,12 @@
 
 This repo is intended to provide a growing list of hands-on tutorials that each can be completed in 20 minutes or less, which start as simple as possible and continually build on the knowledge gained in previous tutorials.
 
+The directory structure mimics college course numbering:
+
+  * 100-level Tutorials are the basic building blocks of a Heat Stack: compute instances, load balancers, cloud databases, DNS
+  * 200-level Tutorials start building real infrastructure by "wiring up" the basic building blocks introduced in the 100-level Tutorials
+  * 300-level Tutorials introduce concepts like Software Configuration Management (SCM) and Auto-Scaling
+
 Feel free to start with the tutorial that scratches your itch. If you find you don't understand something, look for an earlier tutorial to fill in any knowledge gaps.
 
 Most of all, have fun!
