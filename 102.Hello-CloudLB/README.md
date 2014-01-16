@@ -66,49 +66,59 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud Load Balancer: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_loadbalancer.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list (required properties in __bold__, ranges in parenthesis):
+__Cloud Load Balancer: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_loadbalancer.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
-  * __healthMonitor__
-    * __attemptsBeforeDeactivation__ (1 - 10)
-    * __delay__ (1 - 3,600)
-    * __timeout__ (1 - 300)
-    * __type__ (CONNECT, HTTP, HTTPS)
-    * bodyRegex
-    * hostHeader
-    * path
-    * statusRegex
-  * __nodes__
-    * __condition__ (ENABLED, DISABLED, defaults to ENABLED)
-    * __port__
-    * address
-    * ref
-    * type (PRIMARY, SECONDARY)
-    * weight (1 - 100)
-  * __protocol__ (DNS_TCP, DNS_UDP, FTP, HTTP, HTTPS, IMAPS, IMAPv4, LDAP, LDAPS, MYSQL, POP3, POP3S, SMTP, TCP, TCP_CLIENT_FIRST, UDP, UDP_STREAM, SFTP)
-  * __port__
-  * __virtualIps__
-    * __type__ (SERVICENET, PUBLIC)
-    * ipVersion (IPV6, IPV4, defaults to IPV6)
-  * accessList
-    * __address__
-    * __type__ (ALLOW, DENY)
-  * algorithm
-  * connectionLogging
-  * connectionThrottle
-    * maxConnectionRate (0 - 100,000)
-    * minConnections (1 - 1,000)
-    * maxConnections (1 - 100,000)
-    * rateInterval (1 - 3,600)
-  * contentCaching (ENABLED, DISABLED)
-  * errorPage
-  * halfClosed
-  * metadata
-  * name
-  * sessionPersistence (HTTP_COOKIE, SOURCE_IP)
-  * sslTermination
-    * __securePort__ (defaults to 443)
-    * __privateKey__
-    * __certificate__
-    * intermediateCertificate
-    * secureTrafficOnly (defaults to False)
-  * timeout (1 - 120)
+```yaml
+healthMonitor:                   # REQUIRED.
+  attemptsBeforeDeactivation: 3  # REQUIRED. Valid values: 1 - 10
+  delay: 10                      # REQUIRED. Valid values: 1 - 3,600
+  timeout: 120                   # REQUIRED. Valid values: 1 - 300
+  type: HTTP                     # REQUIRED. Valid values: CONNECT, HTTP, HTTPS
+  bodyRegex: "."
+  hostHeader: "header text"
+  path: "/"
+  statusRegex: "."
+nodes:                           # REQUIRED. Value must be a List.
+- condition: DISABLED            # REQUIRED. Valid values: ENABLED (default), DISABLED
+  port: 80
+  address: a-valid-address
+  ref: a string
+  type: PRIMARY                  # Valid values: PRIMARY, SECONDARY
+  weight: 50                     # Valid values: 1 - 100
+protocol: HTTPS                  # REQUIRED. Valid values: DNS_TCP, DNS_UDP, FTP, HTTP, HTTPS,
+                                 #                         IMAPS, IMAPv4, LDAP, LDAPS, MYSQL,
+                                 #                         POP3, POP3S, SMTP, TCP,
+                                 #                         TCP_CLIENT_FIRST, UDP,
+                                 #                         UDP_STREAM, SFTP
+port: 80                         # REQUIRED. Valid values: Numeric
+virtualIps:                      # REQUIRED. Value must be a List.
+- type: PUBLIC                   # REQUIRED. Valid values: SERVICENET, PUBLIC
+  ipVersion: IPV6                # REQUIRED. Valid values: IPV6 (default), IPV4
+accessList:                      # Value must be a List.
+- address: a-valid-address
+  type: ALLOW                    # REQUIRED. Valid values: ALLOW, DENY
+algorithm: ROUND_ROBIN           # See Rackspace documentation for valid values.
+                                 # As of this writing: LEAST_CONNECTIONS, RANDOM, ROUND_ROBIN
+                                 #                     WEIGHTED_LEAST_CONNECTIONS,
+                                 #                     WEIGHTED_ROUND_ROBIN
+connectionLogging: True          # Valid values: True, False
+connectionThrottle:
+  maxConnectionRate: 50          # Valid values: 0 - 100,000
+  minConnections:  50            # Valid values: 1 - 1,000
+  maxConnections: 50             # Valid values: 1 - 100,000
+  rateInterval: 50               # Valid values: 1 - 3,600
+contentCaching: ENABLED          # Valid values: ENABLED, DISABLED
+errorPage: a string
+halfClosed: True                 # Valid values: True, False
+metadata:                        # Value must be a map
+  your-key: your-value
+name: Your Load Balancer Name
+sessionPersistence: HTTP_COOKIE  # Valid values: HTTP_COOKIE, SOURCE_IP
+sslTermination:
+  securePort: 8443               # REQUIRED. Defaults to 443.
+  privateKey: your-private-key   # REQUIRED.
+  certificate: your-cert
+  intermediateCertificate: your-other-cert
+  secureTrafficOnly: True        # Valid values: False (default), True
+timeout: 30                      # Valid values: 1 - 120
+```

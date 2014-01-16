@@ -63,5 +63,5 @@ __Compute Instances: Want to know more?__ For a complete list of properties, the
   * __image__
   * user_data
   * key_name
-  * Volumes
+  * Volumes (value type is a List)
   * name

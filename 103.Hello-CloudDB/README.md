@@ -56,4 +56,8 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 
 __Cloud Database: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/clouddatabase.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list (required properties in __bold__, ranges in parenthesis):
 
-  * TBD
+  * __InstanceName__
+  * __FlavorRef__
+  * __VolumeSize__ (1 - 150)
+  * Databases
+  * Users
