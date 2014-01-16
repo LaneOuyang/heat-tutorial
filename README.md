@@ -59,7 +59,7 @@ OS_AUTH_URL="https://identity.api.rackspacecloud.com/v2.0/"
 HEAT_URL="https://iad.orchestration.api.rackspacecloud.com/v1/${OS_TENANT_ID}"
 ```
 
-_Refer to your particular OS for details on how to setup environment variables. These can also be passed as command line parameters if you're the type that enjoys things like pokes in the eye with sharp sticks._
+_Refer to your particular OS for details on how to setup environment variables. These can also be passed as a **very** long list of command line parameters if you're the type that enjoys things like pokes in the eye with sharp sticks._
 </br>
 </br>
 ### 5. >>Sanity Check<< Local Env
@@ -72,3 +72,5 @@ This should return a list of all of your stacks. If this is your first time usin
 </br>
 </br>
 ### 6. CONGRATULATIONS! You're Done!
+
+If you're not sure where to go next, try [the first tutorial](/100.Hello-Compute).
