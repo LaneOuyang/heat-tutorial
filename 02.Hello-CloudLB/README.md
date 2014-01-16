@@ -52,7 +52,7 @@ heat -k stack-list
 
 If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
 
-__Congratulations!__ You have successfully spun up a Cloud Load Balancer Stack. Of course it's not a very useful stack: you don't even know it's IP address and you can't ssh into it. There's only one thing left to do...
+__Congratulations!__ You have successfully spun up a Cloud Load Balancer Stack. Of course it's not a very useful stack: we haven't defined any compute instances to wire up to the load balancer. That will come in a future tutorial. For now there's only one thing left to do...
 </br>
 </br>
 ### 5. Delete It!
