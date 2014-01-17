@@ -64,3 +64,5 @@ Databases: # Value must be a List.
 - Character_set: utf8 # Valid values: 
 Users: 
 ```
+
+If you're not sure where to go next, try [the next tutorial](/104.Hello-CloudDNS).

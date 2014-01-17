@@ -67,3 +67,5 @@ key_name: name-of-your-key-pair
 Volumes:                          # Value must be a List.
 name: Your Cloud Server Name
 ```
+
+If you're not sure where to go next, try [the next tutorial](/102.Hello-CloudLB).
