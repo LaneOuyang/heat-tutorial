@@ -32,7 +32,7 @@ resources:
 heat -k stack-create Update-StackExample --template-file update-stack.template
 ```
 
-You should get a list of your stacks, including one with a stack_name of "Update-Stack-Example" with a stack_status of "CREATE_IN_PROGRESS".
+You should get a list of your stacks, including one with a `stack_name` of "Update-Stack-Example" with a `stack_status` of `CREATE_IN_PROGRESS`.
 </br>
 ### 4. Check In On It
 
@@ -40,7 +40,7 @@ You should get a list of your stacks, including one with a stack_name of "Update
 heat -k stack-list
 ```
 
-If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
+If everything goes as planned it will have a status of `CREATE_IN_PROGRESS` for a bit, followed by `CREATE_COMPLETE`. Just re-run this command until you see `CREATE_COMPLETE`.
 
 Now we have a Stack up and running, but what if we want to change something about its configuration? That's where stack-update comes in.
 </br>
@@ -67,7 +67,7 @@ Save the file, then run:
 heat -k stack-update Update-Stack-Example --template-file update-stack.template
 ```
 
-You should see the stack_status in the resulting output is now "UPDATE_IN_PROGRESS". You can check in on update progress using the shell command from step 4. Assuming the update is successful you will see the stack_status change to "UPDATE_COMPLETE". Now that we've updated it, there is only one thing left to do...
+You should see the `stack_status` in the resulting output is now `UPDATE_IN_PROGRESS`. You can check in on update progress using the shell command from step 4. Assuming the update is successful you will see the `stack_status` change to `UPDATE_COMPLETE`. Now that we've updated it, there is only one thing left to do...
 </br>
 </br>
 ### 6. Delete It!
@@ -76,7 +76,7 @@ You should see the stack_status in the resulting output is now "UPDATE_IN_PROGRE
 heat -k stack-delete Update-Stack-Example
 ```
 
-You should see the status reported as "DELETE_IN_PROGRESS". If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
+You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
 </br>
 </br>
 ### 6. CONGRATULATIONS! You're Done!

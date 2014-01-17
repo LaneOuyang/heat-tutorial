@@ -36,7 +36,7 @@ resources:
 heat -k stack-create CloudDNS-Stack --template-file hello-clouddns.template
 ```
 
-You should get a list of your stacks, including one with a stack_name of "CloudDNS-Stack" with a stack_status of "CREATE_IN_PROGRESS".
+You should get a list of your stacks, including one with a `stack_name` of "CloudDNS-Stack" with a `stack_status` of `CREATE_IN_PROGRESS`.
 </br>
 ### 4. Check In On It
 
@@ -44,7 +44,7 @@ You should get a list of your stacks, including one with a stack_name of "CloudD
 heat -k stack-list
 ```
 
-If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
+If everything goes as planned it will have a status of `CREATE_IN_PROGRESS` for a bit, followed by `CREATE_COMPLETE`. Just re-run this command until you see `CREATE_COMPLETE`.
 
 __Congratulations!__ You have successfully spun up a Cloud DNS Stack. Now that we've proved we can spin one up, there's only one thing left to do...
 </br>
@@ -55,7 +55,7 @@ __Congratulations!__ You have successfully spun up a Cloud DNS Stack. Now that w
 heat -k stack-delete CloudDNS-Stack
 ```
 
-You should see the status reported as "DELETE_IN_PROGRESS". If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
+You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
 </br>
 </br>
 ### 6. CONGRATULATIONS! You're Done!
