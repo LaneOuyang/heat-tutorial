@@ -24,6 +24,13 @@ resources:
       InstanceName: My Test Database
       FlavorRef: 1GB Instance
       VolumeSize: 1
+      Databases:
+      - Name: testdb
+      Users:
+      - Name: testuser
+        Password: password
+        Databases:
+        - testdb
 ```
 </br>
 ### 3. Spin It Up!
@@ -42,7 +49,7 @@ heat -k stack-list
 
 If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
 
-__Congratulations!__ You have successfully spun up a Cloud Database Stack. Of course we didn't create any actual databases or users, so it's not terribly useful. Now that we've proved we can spin one up, there's only one thing left to do...
+__Congratulations!__ You have successfully spun up a Cloud Database Stack. Now that we've proved we can spin one up, there's only one thing left to do...
 </br>
 </br>
 ### 5. Delete It!
@@ -72,12 +79,12 @@ Users:                                  # Value must be a List.
   Password: password1                   # REQUIRED.
   Host: '%'                             # '%' is the default. Used to restrict access to specific IP addresses
   Databases:                            # Value must be a List.
-  - Name: testdb1
-  - Name: testdb2
+  - testdb1
+  - testdb2
 - Name: user2
   Password: password2
   Databases:
-  - Name: testdb1
+  - testdb1
 ```
 
 If you're not sure where to go next, try [the next tutorial](/104.Hello-CloudDNS).

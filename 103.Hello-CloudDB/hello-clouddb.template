@@ -7,3 +7,10 @@ resources:
       InstanceName: My Test Database
       FlavorRef: 1GB Instance
       VolumeSize: 1
+      Databases:
+      - Name: testdb
+      Users:
+      - Name: testuser
+        Password: password
+        Databases:
+        - testdb
