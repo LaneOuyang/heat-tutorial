@@ -67,11 +67,10 @@ Save the file, then run:
 heat -k stack-update Update-Stack-Example --template-file update-stack.template
 ```
 
-You should see the stack_status in the resulting output is now "..."
-
+You should see the stack_status in the resulting output is now "UPDATE_IN_PROGRESS". You can check in on update progress using the shell command from step 4. Assuming the update is successful you will see the stack_status change to "UPDATE_COMPLETE". Now that we've updated it, there is only one thing left to do...
 </br>
 </br>
-### 5. Delete It!
+### 6. Delete It!
 
 ```shell
 heat -k stack-delete Update-Stack-Example
