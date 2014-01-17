@@ -21,7 +21,13 @@ resources:
   dns: # You can name this whatever you prefer
     type: "Rackspace::Cloud::DNS"
     properties:
-      Coming: Soon
+      name: zyxzzyxz.com  # You should change this to your own domain
+      emailAddress: admin@zyxzzyxz.com  # You should change this to your own email
+      records:
+      - name: mail.zyxzzyxz.com  # You should change this to your own domain
+        type: MX
+        data: 123.456.78.9  # You should change this to your own IP Address
+        priority: 10
 ```
 </br>
 ### 3. Spin It Up!
@@ -57,7 +63,20 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 __Cloud DNS: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_dns.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
-Coming: Soon
+name: somedomain.com                # REQUIRED. Value must be a valid domain name.
+emailAddress: admin@somedomain.com  # REQUIRED. Domain Administrator's email address.
+ttl: 301                            # How long other servers should cache recorddata.
+                                    # Minimum required: 301. Defaults to 3600.
+comment: For testing only           # Maximum: 160 characters.
+records:                            # Value must be a List.
+- comment: For testing only         # Maximum: 160 characters.
+  name: mail.somedomain.com         # REQUIRED. Value must be a valid domain name.
+  data: 123.456.78.9                # REQUIRED. Type specific record data
+  priority: 10                      # REQUIRED for MX and SRV records, but forbidden for
+                                    # other record types. Valid values: 0 - 65535
+  ttl: 301                          # How long other servers should cache recorddata.
+                                    # Minimum required: 301. Defaults to 3600.
+  type: MX                          # REQUIRED. Valid values: A, AAAA, NS, MX, CNAME, TXT, SRV
 ```
 
 If you're not sure where to go next, try [the next tutorial](/105.Update-Stack).

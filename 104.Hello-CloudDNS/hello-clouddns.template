@@ -4,4 +4,10 @@ resources:
   dns: # You can name this whatever you prefer
     type: "Rackspace::Cloud::DNS"
     properties:
-      Coming: Soon
+      name: zyxzzyxz.com  # You should change this to your own domain
+      emailAddress: admin@zyxzzyxz.com  # You should change this to your own email
+      records:
+      - name: mail.zyxzzyxz.com  # You should change this to your own domain
+        type: MX
+        data: 123.456.78.9  # You should change this to your own IP Address
+        priority: 10
