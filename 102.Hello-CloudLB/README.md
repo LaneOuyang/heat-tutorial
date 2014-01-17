@@ -18,7 +18,7 @@ Use your favorite editor to create this file (named 'hello-cloudlb.template'):
 heat_template_version: 2013-05-23
 
 resources:
-  lb:
+  lb: # You can name this whatever you prefer
     type: "Rackspace::Cloud::LoadBalancer"
     properties:
       name: My Test Load Balancer

@@ -18,10 +18,12 @@ Use your favorite editor to create this file (named 'hello-clouddb.template'):
 heat_template_version: 2013-05-23
 
 resources:
-  lb:
+  db: # You can name this whatever you prefer
     type: "Rackspace::Cloud::DBInstance"
     properties:
-      name: My Test Database
+      InstanceName: My Test Database
+      FlavorRef: 1GB Instance
+      VolumeSize: 1
 ```
 </br>
 ### 3. Spin It Up!
@@ -40,7 +42,7 @@ heat -k stack-list
 
 If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
 
-__Congratulations!__ You have successfully spun up a Cloud Database Stack. Now that we've proved we can spin one up, there's only one thing left to do...
+__Congratulations!__ You have successfully spun up a Cloud Database Stack. Of course we didn't create any actual databases or users, so it's now terribly useful. Now that we've proved we can spin one up, there's only one thing left to do...
 </br>
 </br>
 ### 5. Delete It!
@@ -57,12 +59,25 @@ You should see the status reported as "DELETE_IN_PROGRESS". If you check again i
 __Cloud Database: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/clouddatabase.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
-InstanceName: Your Cloud Database Name # REQUIRED. 255 max characters.
-FlavorRef: 1GB Instance # REQUIRED. Valid values: 1GB Instance, 2GB Instance, 4GB Instance, 8GB Instance, 16GB Instance
-VolumeSize: # REQUIRED. Valid values: 1 - 150
-Databases: # Value must be a List.
-- Character_set: utf8 # Valid values: 
-Users: 
+InstanceName: Your Cloud Database Name  # REQUIRED. 255 max characters.
+FlavorRef: 1GB Instance                 # REQUIRED. Valid values: 1GB Instance, 2GB Instance, 4GB Instance, 8GB Instance, 16GB Instance
+VolumeSize: 2                           # REQUIRED. Valid values: 1 - 150 (Gigabytes)
+Databases:                              # Value must be a List.
+- Name: testdb1                         # REQUIRED. Must start and end with alphanumeric or underscore and can also contain: @, ?, #, space
+  Character_set: utf8                   # Valid values: 
+  Collate: utf8_generic_ci              # Valid values: 
+- Name: testdb2
+Users:                                  # Value must be a List.
+- Name: user1                           # REQUIRED.
+  Password: password1                   # REQUIRED.
+  Host: '%'                             # '%' is the default. Used to restrict access to specific IP addresses
+  Databases:                            # Value must be a List.
+  - Name: testdb1
+  - Name: testdb2
+- Name: user2
+  Password: password2
+  Databases:
+  - Name: testdb1
 ```
 
 If you're not sure where to go next, try [the next tutorial](/104.Hello-CloudDNS).

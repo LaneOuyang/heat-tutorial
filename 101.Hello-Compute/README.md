@@ -19,7 +19,7 @@ Use your favorite editor to create this file (named 'hello-compute.template'):
 heat_template_version: 2013-05-23
 
 resources:
-  compute_instance:
+  compute_instance: # You can name this whatever you prefer
     type: "Rackspace::Cloud::Server"
     properties:
       flavor: 1GB Standard Instance
