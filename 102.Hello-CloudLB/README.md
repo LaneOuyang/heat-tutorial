@@ -80,7 +80,7 @@ healthMonitor:                   # REQUIRED.
   statusRegex: "."
 nodes:                           # REQUIRED. Value must be a List.
 - condition: DISABLED            # REQUIRED. Valid values: ENABLED (default), DISABLED
-  port: 80
+  port: 80                       # REQUIRED.
   address: a-valid-address
   ref: a string
   type: PRIMARY                  # Valid values: PRIMARY, SECONDARY
@@ -94,6 +94,8 @@ port: 80                         # REQUIRED. Valid values: Numeric
 virtualIps:                      # REQUIRED. Value must be a List.
 - type: PUBLIC                   # REQUIRED. Valid values: SERVICENET, PUBLIC
   ipVersion: IPV6                # REQUIRED. Valid values: IPV6 (default), IPV4
+- type: PUBLIC
+  ipVersion: IPV4
 accessList:                      # Value must be a List.
 - address: a-valid-address
   type: ALLOW                    # REQUIRED. Valid values: ALLOW, DENY
