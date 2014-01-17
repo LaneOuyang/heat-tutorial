@@ -42,7 +42,7 @@ heat -k stack-list
 
 If everything goes as planned it will have a status of "CREATE_IN_PROGRESS" for a bit, followed by "CREATE_COMPLETE". Just re-run this command until you see CREATE_COMPLETE.
 
-__Congratulations!__ You have successfully spun up a Cloud Database Stack. Of course we didn't create any actual databases or users, so it's now terribly useful. Now that we've proved we can spin one up, there's only one thing left to do...
+__Congratulations!__ You have successfully spun up a Cloud Database Stack. Of course we didn't create any actual databases or users, so it's not terribly useful. Now that we've proved we can spin one up, there's only one thing left to do...
 </br>
 </br>
 ### 5. Delete It!
