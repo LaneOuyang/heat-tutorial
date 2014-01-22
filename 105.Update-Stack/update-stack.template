@@ -6,4 +6,4 @@ resources:
     properties:
       flavor: 1GB Standard Instance
       image: CentOS 6.4
-      name: Single Compute Instance
+      name: My Compute Instance
