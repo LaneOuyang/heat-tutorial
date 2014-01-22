@@ -81,4 +81,4 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-If you're not sure where to go next, try the next tutorial (Coming soon).
+If you're not sure where to go next, try [the next tutorial](/106.Template-Description).
