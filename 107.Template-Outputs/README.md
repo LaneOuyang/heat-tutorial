@@ -1,4 +1,4 @@
-# Hello Compute Stack
+# Template Outputs
 ### Author: Pablo <paul.nelson@rackspace.com>
 </br>
 ### 1. >>Sanity Check<< Local Env

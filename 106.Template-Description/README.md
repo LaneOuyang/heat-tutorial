@@ -1,4 +1,4 @@
-# Hello Compute Stack
+# Template Description
 ### Author: Pablo <paul.nelson@rackspace.com>
 </br>
 ### 1. The world's simplest Heat Orchestration Template: Revisited
