@@ -1,0 +1,46 @@
+heat_template_version: 2013-05-23
+
+description: |
+  Heat Orchestration Template that spins up a single Rackspace Cloud Server,
+  parameterized to allow setting flavor and image from a list of valid options.
+  Adding a `outputs` section would make this template more useful.
+
+parameters:
+  compute_instance_flavor:
+    description: flavor id for the compute instance
+    type: String
+    default: 1 GB Performance
+    constraints:
+      description: Must be a valid Rackspace Cloud Server flavor.
+    - allowed_values:
+      - 1 GB Performance
+      - 2 GB Performance
+      - 4 GB Performance
+      - 8 GB Performance
+      - 16 GB Performance
+
+  compute_instance_image:
+    description: Image name for the compute instance
+    type: String
+    default: CentOS 6.4
+    constraints:
+      description: Must be a valid Rackspace Cloud Server image name.
+    - allowed_values:
+      - CentOS 6.4
+      - CentOS 5.10
+      - Arch 2013.9
+      - Ubuntu 13.10
+      - Ubuntu 12.10
+
+resources:
+  compute_instance: # You can name this whatever you prefer
+    type: "Rackspace::Cloud::Server"
+    properties:
+      flavor: { get_param: compute_instance_flavor }
+      image: { get_param: compute_instance_image }
+      name: Single Cloud Server compute instance
+
+outputs:
+  public_ip:
+    description: The public IP address to the cloud server
+    value: { get_attr: [compute_instance, PublicIp]}
