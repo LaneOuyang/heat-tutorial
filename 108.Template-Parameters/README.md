@@ -113,4 +113,4 @@ str_replace:                                       # inserts a string defined by
 
 ```
 
-If you're not sure where to go next, try [the next tutorial](coming soon...).
+If you're not sure where to go next, try [the next tutorial](/109.Resource-Groups).
