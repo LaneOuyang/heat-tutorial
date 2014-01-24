@@ -104,7 +104,7 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Template Parameters: Want to know more?__ Along with the `parameters` section, this tutorial introduces some of Cloud Server's attributes. For a complete list of attributes, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Template Parameters: Want to know more?__ Along with the `parameters` section, this tutorial introduces some of Cloud Server's attributes. For a complete list of attributes, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 * distro
 * flavor

@@ -60,7 +60,7 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud DNS: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_dns.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Cloud DNS: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_dns.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
 name: somedomain.com                # REQUIRED. Value must be a valid domain name.

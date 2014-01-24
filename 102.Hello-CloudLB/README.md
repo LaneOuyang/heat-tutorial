@@ -66,7 +66,7 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud Load Balancer: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_loadbalancer.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Cloud Load Balancer: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_loadbalancer.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
 healthMonitor:                   # REQUIRED.

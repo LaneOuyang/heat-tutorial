@@ -22,11 +22,11 @@ There are some things you will need to have sorted before you dive in. Making su
 </br>
 ### 1. Prerequisites
 
-  * [Python 2.7](http://www.python.org/download/releases/2.7/)
-  * [pip](http://www.pip-installer.org/en/latest/installing.html/)
-  * (optional) a [Pyhon Virtual Environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+  * <a href="http://www.python.org/download/releases/2.7/" target="_blank">Python 2.7</a>
+  * <a href="http://www.pip-installer.org/en/latest/installing.html/" target="_blank">pip</a>
+  * (optional) a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">Python Virtual Environment</a>
 
-_If you're using a Mac, [homebrew](http://brew.sh/) is your friend._
+_If you're using a Mac, <a href="http://brew.sh/" target="_blank">homebrew</a> is your friend._
 </br>
 </br>
 ### 2. This guide uses python-heatclient, so...
@@ -35,9 +35,9 @@ _If you're using a Mac, [homebrew](http://brew.sh/) is your friend._
 pip install python-heatclient
 ```
 
-_If you're **not** using a virtual environment, you may need to start the above incantation with [sudo](http://xkcd.com/149/)._
+_If you're **not** using a virtual environment, you may need to start the above incantation with <a href="http://xkcd.com/149/" target="_blank">sudo</a>._
 
-More about python-heat-client can be found in [OpenStack's documentation](http://docs.openstack.org/developer/python-heatclient/).
+More about python-heat-client can be found in <a href="http://docs.openstack.org/developer/python-heatclient/" target="_blank">OpenStack's documentation</a>.
 </br>
 </br>
 ### 3. >>Sanity Check<< Command Line Works

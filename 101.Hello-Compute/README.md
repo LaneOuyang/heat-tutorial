@@ -57,7 +57,7 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
 flavor: 1GB Standard Instance     # REQUIRED. Check Rackspace documentation for valid flavors.
