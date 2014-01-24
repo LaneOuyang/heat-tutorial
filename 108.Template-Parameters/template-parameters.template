@@ -6,41 +6,49 @@ description: |
   Adding a `outputs` section would make this template more useful.
 
 parameters:
-  compute_instance_flavor:
+  compute_flavor:
     description: flavor id for the compute instance
     type: String
     default: 1 GB Performance
     constraints:
-      description: Must be a valid Rackspace Cloud Server flavor.
     - allowed_values:
       - 1 GB Performance
       - 2 GB Performance
       - 4 GB Performance
       - 8 GB Performance
       - 16 GB Performance
+      description: Must be a valid Rackspace Cloud Server flavor.
 
-  compute_instance_image:
+  compute_image:
     description: Image name for the compute instance
     type: String
     default: CentOS 6.4
     constraints:
-      description: Must be a valid Rackspace Cloud Server image name.
     - allowed_values:
       - CentOS 6.4
       - CentOS 5.10
       - Arch 2013.9
       - Ubuntu 13.10
       - Ubuntu 12.10
+      description: Must be a valid Rackspace Cloud Server image name.
 
 resources:
   compute_instance:
     type: "Rackspace::Cloud::Server"
     properties:
-      flavor: { get_param: compute_instance_flavor }
-      image: { get_param: compute_instance_image }
+      flavor: { get_param: compute_flavor }
+      image: { get_param: compute_image }
       name: Single Cloud Server compute instance
 
 outputs:
-  public_ip:
+  compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, PublicIp]}
+    value: { get_attr: [compute_instance, public_ip]}
+
+  image_used:
+    description: The image this compute instance was built upon
+    value: { get_attr: [compute_instance, image]}
+
+  flavor_used:
+    description: The flavor used to build this compute instance
+    value: { get_attr: [compute_instance, flavor]}

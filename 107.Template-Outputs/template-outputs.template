@@ -14,6 +14,6 @@ resources:
       name: Simplest Stack In The World
 
 outputs:
-  public_ip:
+  compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, PublicIp]}
+    value: { get_attr: [compute_instance, public_ip]}

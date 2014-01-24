@@ -31,9 +31,9 @@ resources:
       name: Simplest Stack In The World
 
 outputs:
-  public_ip:
+  compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, PublicIp]}
+    value: { get_attr: [compute_instance, public_ip]}
 ```
 </br>
 ### 3. Spin It Up!
@@ -82,7 +82,7 @@ __Template Outputs: Want to know more?__ Along with the `outputs` section, this 
 str_replace:                                       # inserts a string defined by `template`
   template: <string template>                      # e.g. "http://%ip%/wordpress"
   params:                                          # the definition of the params in the template
-    <param dictionary>                             # e.g. "%ip%": { get_attr: [ lb, PublicIp ] }
+    <param dictionary>                             # e.g. "%ip%": { get_attr: [ lb, public_ip ] }
 
 ```
 

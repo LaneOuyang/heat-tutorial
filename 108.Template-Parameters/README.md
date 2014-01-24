@@ -23,50 +23,60 @@ description: |
   Adding a `outputs` section would make this template more useful.
 
 parameters:
-  compute_instance_flavor:
+  compute_flavor:
     description: flavor id for the compute instance
     type: String
     default: 1 GB Performance
     constraints:
-      description: Must be a valid Rackspace Cloud Server flavor.
     - allowed_values:
       - 1 GB Performance
       - 2 GB Performance
       - 4 GB Performance
       - 8 GB Performance
       - 16 GB Performance
+      description: Must be a valid Rackspace Cloud Server flavor.
 
-  compute_instance_image:
+  compute_image:
     description: Image name for the compute instance
     type: String
     default: CentOS 6.4
     constraints:
-      description: Must be a valid Rackspace Cloud Server image name.
     - allowed_values:
       - CentOS 6.4
       - CentOS 5.10
       - Arch 2013.9
       - Ubuntu 13.10
       - Ubuntu 12.10
+      description: Must be a valid Rackspace Cloud Server image name.
 
 resources:
   compute_instance:
     type: "Rackspace::Cloud::Server"
     properties:
-      flavor: { get_param: compute_instance_flavor }
-      image: { get_param: compute_instance_image }
+      flavor: { get_param: compute_flavor }
+      image: { get_param: compute_image }
       name: Single Cloud Server compute instance
 
 outputs:
-  public_ip:
+  compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, PublicIp]}
+    value: { get_attr: [compute_instance, public_ip]}
+
+  image_used:
+    description: The image this compute instance was built upon
+    value: { get_attr: [compute_instance, image]}
+
+  flavor_used:
+    description: The flavor used to build this compute instance
+    value: { get_attr: [compute_instance, flavor]}
 ```
 </br>
 ### 3. Spin It Up!
 
+We could just go with the defaults for the parameters but what would that prove?! Let's be specific:
+
 ```shell
-heat -k stack-create Single-Compute-Stack --template-file template-parameters.template
+heat -k stack-create Single-Compute-Stack --template-file template-parameters.template -parameters compute_flavor="2 GB Performance";compute_image="Arch 2013.9"
 ```
 
 </br>
@@ -78,7 +88,7 @@ You'll need to wait until the stack has been successfully created (`heat -k stac
 heat -k stack-show Single-Compute-Stack
 ```
 
-___Add details for showing Image and Flavor in outputs___
+In the `outputs` section you should see `image` listed as "Arch 2013.9" and `flavor` listed as "2 GB Performance".
 
 __Congratulations!__ You have successfully added and used parameters in your template, making the resulting stack much more useful! There's only one thing left to do...
 </br>
@@ -94,23 +104,14 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Template Parameters: Want to know more?__ Along with the `outputs` section, this tutorial introduces one of [HOT's Intrinsic Functions](http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec-intrinsic-functions). For a complete list of Intrinsic Functions, the source of truth is [the code](https://github.com/openstack/heat/blob/master/heat/engine/hot.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Template Parameters: Want to know more?__ Along with the `parameters` section, this tutorial introduces some of Cloud Server's attributes. For a complete list of attributes, the source of truth is [the code](https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
-```yaml
-{ get_param: <param_name>}                         # retrieves an entry by name from
-                                                   # the template's `parameters` section
-
-{ get_resource: <resource_name>}                   # retrieves an entry by name from
-                                                   # the template's `resources` section
-
-{ get_attr: [<resource_name>, <atttribute_name>]}  # retrieves an attribute's value from
-                                                   # the named resource
-
-str_replace:                                       # inserts a string defined by `template`
-  template: <string template>                      # e.g. "http://%ip%/wordpress"
-  params:                                          # the definition of the params in the template
-    <param dictionary>                             # e.g. "%ip%": { get_attr: [ lb, PublicIp ] }
-
-```
+* distro
+* flavor
+* image
+* private_ip
+* private_key
+* public_ip
+* server
 
 If you're not sure where to go next, try [the next tutorial](/109.Resource-Groups).
