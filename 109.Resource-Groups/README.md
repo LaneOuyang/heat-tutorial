@@ -52,11 +52,16 @@ heat -k stack-show Resource-Group-Example
 ```
 
 Look for the `refs` section under `outputs`. You should see two compute instances listed.
+</br>
+</br>
+### 5. Extra Credit
+
+Try using what you learned from the [update stack tutorial](/105.Update-Stack) to increase the number of compute instances from 2 to 3. _hint: yes, it's that easy!_
 
 __Congratulations!__ You have successfully spun up your first Resource Group. Of course it's not very useful: what this template needs is a load balancer, which we'll add in [the next tutorial](/200.A-Real-Stack)! There's only one thing left to do...
 </br>
 </br>
-### 5. Delete It!
+### 6. Delete It!
 
 ```shell
 heat -k stack-delete Resource-Group-Example
@@ -65,7 +70,7 @@ heat -k stack-delete Resource-Group-Example
 You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
 </br>
 </br>
-### 6. CONGRATULATIONS! You're Done!
+### 7. CONGRATULATIONS! You're Done!
 
 __Resource Groups: Want to know more?__ Coming soon...
 
