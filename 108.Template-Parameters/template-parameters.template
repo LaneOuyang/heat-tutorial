@@ -33,7 +33,7 @@ parameters:
       - Ubuntu 12.10
 
 resources:
-  compute_instance: # You can name this whatever you prefer
+  compute_instance:
     type: "Rackspace::Cloud::Server"
     properties:
       flavor: { get_param: compute_instance_flavor }

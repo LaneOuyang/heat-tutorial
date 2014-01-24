@@ -6,7 +6,7 @@ description: |
   would make this template more useful.
 
 resources:
-  compute_instance: # You can name this whatever you prefer
+  compute_instance:
     type: "Rackspace::Cloud::Server"
     properties:
       flavor: 1GB Standard Instance
