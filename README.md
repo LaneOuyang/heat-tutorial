@@ -26,7 +26,7 @@ There are some things you will need to have sorted before you dive in. Making su
   * <a href="http://www.pip-installer.org/en/latest/installing.html/" target="_blank">pip</a>
   * (optional) a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">Python Virtual Environment</a>
 
-*If you're using a Mac, <a href="http://brew.sh/" target="\\_blank">homebrew</a> is your friend.*
+*If you're using a Mac, <a href="http://brew.sh/" target="_blank">homebrew</a> is your friend.*
 </br>
 </br>
 ### 2. This guide uses python-heatclient, so...
@@ -35,7 +35,7 @@ There are some things you will need to have sorted before you dive in. Making su
 pip install python-heatclient
 ```
 
-_If you're **not** using a virtual environment, you may need to start the above incantation with <a href="http://xkcd.com/149/" target="_blank">sudo</a>._
+*If you're **not** using a virtual environment, you may need to start the above incantation with <a href="http://xkcd.com/149/" target="_blank">sudo</a>.*
 
 More about python-heat-client can be found in <a href="http://docs.openstack.org/developer/python-heatclient/" target="_blank">OpenStack's documentation</a>.
 </br>
