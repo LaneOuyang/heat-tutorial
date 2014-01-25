@@ -35,7 +35,7 @@ There are some things you will need to have sorted before you dive in. Making su
 pip install python-heatclient
 ```
 
-*If you're **not** using a virtual environment, you may need to start the above incantation with <a href="http://xkcd.com/149/" target="_blank">sudo</a>.*
+*If you're __not__ using a virtual environment, you may need to start the above incantation with <a href="http://xkcd.com/149/" target="_blank">sudo</a>.*
 
 More about python-heat-client can be found in <a href="http://docs.openstack.org/developer/python-heatclient/" target="_blank">OpenStack's documentation</a>.
 </br>
