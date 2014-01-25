@@ -26,7 +26,7 @@ There are some things you will need to have sorted before you dive in. Making su
   * <a href="http://www.pip-installer.org/en/latest/installing.html/" target="_blank">pip</a>
   * (optional) a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">Python Virtual Environment</a>
 
-_If you're using a Mac, <a href="http://brew.sh/" target="\_blank">homebrew</a> is your friend._
+*If you're using a Mac, <a href="http://brew.sh/" target="\\_blank">homebrew</a> is your friend.*
 </br>
 </br>
 ### 2. This guide uses python-heatclient, so...
