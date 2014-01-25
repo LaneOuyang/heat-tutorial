@@ -67,7 +67,7 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Template Outputs: Want to know more?__ Along with the `outputs` section, this tutorial introduces one of [HOT's Intrinsic Functions](http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec-intrinsic-functions). For a complete list of Intrinsic Functions, the source of truth is [the code](https://github.com/openstack/heat/blob/master/heat/engine/hot.py). Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
+__Template Outputs: Want to know more?__ Along with the `outputs` section, this tutorial introduces one of <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec-intrinsic-functions" target="_blank">HOT's Intrinsic Functions</a>. For a complete list of Intrinsic Functions, the source of truth is <a href="https://github.com/openstack/heat/blob/master/heat/engine/hot.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
 { get_param: <param_name>}                         # retrieves an entry by name from
