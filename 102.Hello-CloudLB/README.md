@@ -18,9 +18,6 @@ Use your favorite editor to create this file (named 'hello-cloudlb.template'):
 heat_template_version: 2013-05-23
 
 resources:
-heat_template_version: 2013-05-23
-
-resources:
   lb: # You can name this whatever you prefer
     type: "Rackspace::Cloud::LoadBalancer"
     properties:
@@ -34,7 +31,7 @@ resources:
         statusRegex: "."
         path: "/"
       nodes:
-      - addresses: [127.0.0.1]
+      - addresses: []
         condition: ENABLED
         port: 80
       protocol: HTTP

@@ -14,7 +14,7 @@ resources:
         statusRegex: "."
         path: "/"
       nodes:
-      - addresses: [127.0.0.1]
+      - addresses: []
         condition: ENABLED
         port: 80
       protocol: HTTP
