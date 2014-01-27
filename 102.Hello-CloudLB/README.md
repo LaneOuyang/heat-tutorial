@@ -18,6 +18,9 @@ Use your favorite editor to create this file (named 'hello-cloudlb.template'):
 heat_template_version: 2013-05-23
 
 resources:
+heat_template_version: 2013-05-23
+
+resources:
   lb: # You can name this whatever you prefer
     type: "Rackspace::Cloud::LoadBalancer"
     properties:
@@ -27,13 +30,18 @@ resources:
         delay: 10
         timeout: 120
         type: HTTP
+        bodyRegex: "."
+        statusRegex: "."
+        path: "/"
       nodes:
-      - condition: ENABLED
+      - addresses: [127.0.0.1]
+        condition: ENABLED
         port: 80
       protocol: HTTP
       port: 80
       virtualIps:
       - type: PUBLIC
+        ipVersion: IPV4
 ```
 </br>
 ### 3. Spin It Up!

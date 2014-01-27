@@ -10,10 +10,15 @@ resources:
         delay: 10
         timeout: 120
         type: HTTP
+        bodyRegex: "."
+        statusRegex: "."
+        path: "/"
       nodes:
-      - condition: ENABLED
+      - addresses: [127.0.0.1]
+        condition: ENABLED
         port: 80
       protocol: HTTP
       port: 80
       virtualIps:
       - type: PUBLIC
+        ipVersion: IPV4

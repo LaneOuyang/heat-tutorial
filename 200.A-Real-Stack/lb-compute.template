@@ -26,10 +26,14 @@ resources:
         delay: 10
         timeout: 120
         type: HTTP
+        path: "/"
+        statusRegex: "."
+        bodyRegex: "."
       protocol: HTTP
       port: 80
       virtualIps:
       - type: PUBLIC
+        ipVersion: IPV4
 
 outputs:
   web_node_resources:
