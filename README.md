@@ -2,7 +2,9 @@
 ## TL;DR Remix
 ### Author: Pablo <paul.nelson@rackspace.com>
 
-This repo is intended to provide a growing list of hands-on tutorials that each can be completed in 20 minutes or less, which start as simple as possible and continually build on the knowledge gained in previous tutorials.
+This repo is ___not___ intended to be comprehensive documentation, though we do our best to make sure references to comprehensive documentation are provided along the way. An excellent overall reference is the [OpenStack Developer Heat Template Guide](http://docs.openstack.org/developer/heat/template_guide/).
+
+This repo ___is___ intended to provide a growing list of hands-on tutorials that each can be completed in 20 minutes or less, which start as simple as possible and continually build on the knowledge gained in previous tutorials.
 
 The directory structure mimics college course numbering:
 
@@ -10,7 +12,7 @@ The directory structure mimics college course numbering:
   * 200-level Tutorials start building real infrastructure by "wiring up" the basic building blocks introduced in the 100-level Tutorials
   * 300-level Tutorials introduce concepts like Software Configuration Management (SCM) and Auto-Scaling
 
-Feel free to start with the tutorial that scratches your itch. If you find you don't understand something, look for an earlier tutorial to fill in any knowledge gaps.
+Feel free to start with the tutorial that scratches your itch. If you find you don't understand something, look for an earlier tutorial to fill in any knowledge gaps. If you don't find something you're looking for feel free to submit your ideas via email or, if you're so inclined, fork the repo and submit a Pull Request!
 
 Most of all, have fun!
 
