@@ -1,0 +1,41 @@
+heat_template_version: 2013-05-23
+
+resources:
+  web_nodes:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: 2
+      resource_def:
+        type: Rackspace::Cloud::Server
+        properties:
+          flavor: 1GB Standard Instance
+          image: CentOS 6.4
+          name: LB-Compute Web Nodes
+
+  lb:
+    type: Rackspace::Cloud::LoadBalancer
+    properties:
+      name: LB-Compute Load Balancer
+      nodes:
+      - addresses: { get_attr: [web_nodes, PrivateIp]} # This is where the
+                                                       # wiring magic happens
+        port: 80
+        condition: ENABLED
+      healthMonitor:
+        attemptsBeforeDeactivation: 3
+        delay: 10
+        timeout: 120
+        type: HTTP
+      protocol: HTTP
+      port: 80
+      virtualIps:
+      - type: PUBLIC
+
+outputs:
+  web_node_resources:
+    description: The actual compute instance details
+    value: { get_attr: [web_nodes, refs]}
+
+  lb_public_ip:
+    description: The public IP address of the load balancer
+    value: { get_attr: [lb, PublicIp]}
