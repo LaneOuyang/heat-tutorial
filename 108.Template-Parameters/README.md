@@ -76,7 +76,7 @@ outputs:
 We could just go with the defaults for the parameters but what would that prove?! Let's be specific:
 
 ```shell
-heat -k stack-create Single-Compute-Stack --template-file template-parameters.template -parameters compute_flavor="2 GB Performance";compute_image="Arch 2013.9"
+heat -k stack-create Single-Compute-Stack --template-file template-parameters.template --parameters compute_flavor="2 GB Performance";compute_image="Arch 2013.9"
 ```
 
 </br>
