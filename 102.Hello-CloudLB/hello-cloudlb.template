@@ -5,18 +5,7 @@ resources:
     type: "Rackspace::Cloud::LoadBalancer"
     properties:
       name: My Test Load Balancer
-      healthMonitor:
-        attemptsBeforeDeactivation: 3
-        delay: 10
-        timeout: 120
-        type: HTTP
-        bodyRegex: "."
-        statusRegex: "."
-        path: "/"
-      nodes:
-      - addresses: [ 0.0.0.0 ]
-        condition: ENABLED
-        port: 80
+      nodes: []
       protocol: HTTP
       port: 80
       virtualIps:
