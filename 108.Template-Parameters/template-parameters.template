@@ -34,7 +34,7 @@ parameters:
 
 resources:
   compute_instance:
-    type: "Rackspace::Cloud::Server"
+    type: Rackspace::Cloud::Server
     properties:
       flavor: { get_param: compute_flavor }
       image: { get_param: compute_image }

@@ -31,7 +31,7 @@ resources:
         statusRegex: "."
         path: "/"
       nodes:
-      - addresses: []
+      - addresses: [ 0.0.0.0 ]
         condition: ENABLED
         port: 80
       protocol: HTTP
