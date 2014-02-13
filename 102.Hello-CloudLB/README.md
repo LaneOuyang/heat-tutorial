@@ -63,18 +63,18 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 __Cloud Load Balancer: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_loadbalancer.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
 
 ```yaml
-healthMonitor:                   # REQUIRED.
-  attemptsBeforeDeactivation: 3  # REQUIRED. Valid values: 1 - 10
-  delay: 10                      # REQUIRED. Valid values: 1 - 3,600
-  timeout: 120                   # REQUIRED. Valid values: 1 - 300
-  type: HTTP                     # REQUIRED. Valid values: CONNECT, HTTP, HTTPS
+healthMonitor:
+  attemptsBeforeDeactivation: 3  # Valid values: 1 - 10
+  delay: 10                      # Valid values: 1 - 3,600
+  timeout: 120                   # Valid values: 1 - 300
+  type: HTTP                     # Valid values: CONNECT, HTTP, HTTPS
   bodyRegex: "."
   hostHeader: "header text"
   path: "/"
   statusRegex: "."
-nodes:                           # REQUIRED. Value must be a List.
-- condition: DISABLED            # REQUIRED. Valid values: ENABLED (default), DISABLED
-  port: 80                       # REQUIRED.
+nodes:                           # REQUIRED. Value must be a List. Empty list is okay.
+- condition: DISABLED            # Valid values: ENABLED (default), DISABLED
+  port: 80
   address: a-valid-address
   ref: a string
   type: PRIMARY                  # Valid values: PRIMARY, SECONDARY
