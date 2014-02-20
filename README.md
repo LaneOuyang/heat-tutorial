@@ -67,7 +67,7 @@ _Refer to your particular OS for details on how to setup environment variables. 
 ### 5. >>Sanity Check<< Local Env
 
 ```shell
-heat -k stack-list
+heat stack-list
 ```
 
 This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list.

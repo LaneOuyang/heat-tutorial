@@ -4,7 +4,7 @@
 ### 1. >>Sanity Check<< Local Env
 
 ```shell
-heat -k stack-list
+heat stack-list
 ```
 
 This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list. If this isn't working you might need to revisit the [README.md at the root of this repo](/).
@@ -29,17 +29,17 @@ resources:
 ### 3. Spin It Up!
 
 ```shell
-heat -k stack-create Update-Stack-Example --template-file update-stack.template
+heat stack-create Update-Stack-Example --template-file update-stack.template
 ```
 
 You should get a list of your stacks, including one with a `stack_name` of "Update-Stack-Example" with a `stack_status` of `CREATE_IN_PROGRESS`.
 </br>
 ### 4. Check The Flavor
 
-As in previous tutorials, you can check your stack's status using `heat -k stack-list` looking for a status of `CREATE_COMPLETE`. Once complete, you can check the details of your stack:
+As in previous tutorials, you can check your stack's status using `heat stack-list` looking for a status of `CREATE_COMPLETE`. Once complete, you can check the details of your stack:
 
 ```shell
-heat -k template-show Update-Stack-Example
+heat template-show Update-Stack-Example
 ```
 
 In the `properties` section, verify that the value of `flavor` is "1GB Standard Instance".
@@ -66,7 +66,7 @@ resources:
 Save the file, then run:
 
 ```shell
-heat -k stack-update Update-Stack-Example --template-file update-stack.template
+heat stack-update Update-Stack-Example --template-file update-stack.template
 ```
 
 You should see the `stack_status` in the resulting output is now `UPDATE_IN_PROGRESS`. You can check in on update progress as before. Assuming the update is successful you will see the `stack_status` change to `UPDATE_COMPLETE`.
@@ -77,7 +77,7 @@ You should see the `stack_status` in the resulting output is now `UPDATE_IN_PROG
 Once the update is complete, we can use the `show-template` command again to verify the change:
 
 ```shell
-heat -k template-show Update-Stack-Example
+heat template-show Update-Stack-Example
 ```
 
 Now that we've validated that our update actually worked, there is only one thing left to do...
@@ -86,7 +86,7 @@ Now that we've validated that our update actually worked, there is only one thin
 ### 7. Delete It!
 
 ```shell
-heat -k stack-delete Update-Stack-Example
+heat stack-delete Update-Stack-Example
 ```
 
 You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.

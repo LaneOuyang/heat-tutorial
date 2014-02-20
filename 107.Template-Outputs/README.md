@@ -4,7 +4,7 @@
 ### 1. >>Sanity Check<< Local Env
 
 ```shell
-heat -k stack-list
+heat stack-list
 ```
 
 This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list. If this isn't working you might need to revisit the [README.md at the root of this repo](/).
@@ -39,16 +39,16 @@ outputs:
 ### 3. Spin It Up!
 
 ```shell
-heat -k stack-create Single-Compute-Stack --template-file template-outputs.template
+heat stack-create Single-Compute-Stack --template-file template-outputs.template
 ```
 
 </br>
 ### 4. View Output
 
-You'll need to wait until the stack has been successfully created (`heat -k stack-list` will provide your stack's status). Once you see a status of `CREATE_COMPLETE`, show the stack:
+You'll need to wait until the stack has been successfully created (`heat stack-list` will provide your stack's status). Once you see a status of `CREATE_COMPLETE`, show the stack:
 
 ```shell
-heat -k stack-show Single-Compute-Stack
+heat stack-show Single-Compute-Stack
 ```
 
 You should see an `outputs` section. This section is a list of maps, each map in the list containing `description`, `output_key`, and `output_value`. The outputs section should have one map and, in the `output_value`, you will see your server's public IP address!
@@ -59,7 +59,7 @@ __Congratulations!__ You have successfully added outputs to your template, makin
 ### 5. Delete It!
 
 ```shell
-heat -k stack-delete Single-Compute-Stack
+heat stack-delete Single-Compute-Stack
 ```
 
 You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.

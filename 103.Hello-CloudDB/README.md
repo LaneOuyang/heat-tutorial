@@ -4,7 +4,7 @@
 ### 1. >>Sanity Check<< Local Env
 
 ```shell
-heat -k stack-list
+heat stack-list
 ```
 
 This should return a list of all of your stacks. If this is your first time using Heat, it should be an empty list. If this isn't working you might need to revisit the [README.md at the root of this repo](/).
@@ -36,7 +36,7 @@ resources:
 ### 3. Spin It Up!
 
 ```shell
-heat -k stack-create CloudDB-Stack --template-file hello-clouddb.template
+heat stack-create CloudDB-Stack --template-file hello-clouddb.template
 ```
 
 You should get a list of your stacks, including one with a `stack_name` of "CloudDB-Stack" with a `stack_status` of `CREATE_IN_PROGRESS`.
@@ -44,7 +44,7 @@ You should get a list of your stacks, including one with a `stack_name` of "Clou
 ### 4. Check In On It
 
 ```shell
-heat -k stack-list
+heat stack-list
 ```
 
 If everything goes as planned it will have a status of `CREATE_IN_PROGRESS` for a bit, followed by `CREATE_COMPLETE`. Just re-run this command until you see `CREATE_COMPLETE`.
@@ -55,7 +55,7 @@ __Congratulations!__ You have successfully spun up a Cloud Database Stack. Now t
 ### 5. Delete It!
 
 ```shell
-heat -k stack-delete CloudDB-Stack
+heat stack-delete CloudDB-Stack
 ```
 
 You should see the status reported as `DELETE_IN_PROGRESS`. If you check again in a minute or so you should eventually see that the stack is no longer in the list, which means it has been deleted.
