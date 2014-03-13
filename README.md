@@ -54,11 +54,11 @@ This should give you a long list of all the options available from the heat comm
 ### 4. Environment Variables Make Things Easier
 
 ```shell
-OS_USERNAME="<your-rackspace-cloud-account-username>"
-OS_PASSWORD="<your-rackspace-cloud-account-password>"
-OS_TENANT_ID="<your-rackspace-cloud-account-tenant-id>"
-OS_AUTH_URL="https://identity.api.rackspacecloud.com/v2.0/"
-HEAT_URL="https://iad.orchestration.api.rackspacecloud.com/v1/${OS_TENANT_ID}"
+export OS_USERNAME="<your-rackspace-cloud-account-username>"
+export OS_PASSWORD="<your-rackspace-cloud-account-password>"
+export OS_TENANT_ID="<your-rackspace-cloud-account-tenant-id>"
+export OS_AUTH_URL="https://identity.api.rackspacecloud.com/v2.0/"
+export HEAT_URL="https://iad.orchestration.api.rackspacecloud.com/v1/${OS_TENANT_ID}"
 ```
 
 _Refer to your particular OS for details on how to setup environment variables. These can also be passed as a **very** long list of command line parameters if you're the type that enjoys things like pokes in the eye with sharp sticks._
