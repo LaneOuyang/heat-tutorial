@@ -2,15 +2,15 @@ heat_template_version: 2013-05-23
 
 resources:
   db: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::DBInstance"
+    type: "OS::Trove::Instance"
     properties:
-      InstanceName: My Test Database
-      FlavorRef: 1GB Instance
-      VolumeSize: 1
-      Databases:
-      - Name: testdb
-      Users:
-      - Name: testuser
-        Password: password
-        Databases:
+      name: My Test Database
+      flavor: 1GB Instance
+      size: 1
+      databases:
+      - name: testdb
+      users:
+      - name: testuser
+        password: password
+        databases:
         - testdb

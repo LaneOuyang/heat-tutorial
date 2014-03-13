@@ -19,17 +19,17 @@ heat_template_version: 2013-05-23
 
 resources:
   db: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::DBInstance"
+    type: "OS::Trove::Instance"
     properties:
-      InstanceName: My Test Database
-      FlavorRef: 1GB Instance
-      VolumeSize: 1
-      Databases:
-      - Name: testdb
-      Users:
-      - Name: testuser
-        Password: password
-        Databases:
+      name: My Test Database
+      flavor: 1GB Instance
+      size: 1
+      databases:
+      - name: testdb
+      users:
+      - name: testuser
+        password: password
+        databases:
         - testdb
 ```
 </br>
@@ -63,28 +63,6 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud Database: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/clouddatabase.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
-
-```yaml
-InstanceName: Your Cloud Database Name  # REQUIRED. 255 max characters.
-FlavorRef: 1GB Instance                 # REQUIRED. Valid values: 1GB Instance, 2GB Instance, 4GB Instance, 8GB Instance, 16GB Instance
-VolumeSize: 2                           # REQUIRED. Valid values: 1 - 150 (Gigabytes)
-Databases:                              # Value must be a List.
-- Name: testdb1                         # REQUIRED. Must start and end with alphanumeric or underscore and can also contain: @, ?, #, space
-  Character_set: utf8                   # Valid values: 
-  Collate: utf8_generic_ci              # Valid values: 
-- Name: testdb2
-Users:                                  # Value must be a List.
-- Name: user1                           # REQUIRED.
-  Password: password1                   # REQUIRED.
-  Host: '%'                             # '%' is the default. Used to restrict access to specific IP addresses
-  Databases:                            # Value must be a List.
-  - testdb1
-  - testdb2
-- Name: user2
-  Password: password2
-  Databases:
-  - testdb1
-```
+__Cloud Database: Want to know more?__ For a complete list of properties see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Trove::Instance" target="_blank">OpenStack documentation</a>
 
 If you're not sure where to go next, try [the next tutorial](/104.Hello-CloudDNS).
