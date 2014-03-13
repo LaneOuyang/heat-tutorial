@@ -7,8 +7,8 @@ description: |
 
 resources:
   compute_instance: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 1GB Standard Instance
-      image: CentOS 6.4
+      image: CentOS 6.5
       name: Simplest Stack In The World

@@ -19,21 +19,21 @@ heat_template_version: 2013-05-23
 
 description: |
   Heat Orchestration Template that spins up a single Rackspace Cloud Server 
-  and outputs the server's public IP address. Adding a `parameters` section
+  and outputs the server public IP address. Adding a `parameters` section
   would make this template more useful.
 
 resources:
   compute_instance:
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 1GB Standard Instance
-      image: CentOS 6.4
+      image: CentOS 6.5
       name: Simplest Stack In The World
 
 outputs:
   compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, public_ip]}
+    value: { get_attr: [compute_instance, first_address]}
 ```
 </br>
 ### 3. Spin It Up!
@@ -67,23 +67,6 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Template Outputs: Want to know more?__ Along with the `outputs` section, this tutorial introduces one of <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec-intrinsic-functions" target="_blank">HOT's Intrinsic Functions</a>. For a complete list of Intrinsic Functions, the source of truth is <a href="https://github.com/openstack/heat/blob/master/heat/engine/hot.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
-
-```yaml
-{ get_param: <param_name>}                         # retrieves an entry by name from
-                                                   # the template's `parameters` section
-
-{ get_resource: <resource_name>}                   # retrieves an entry by name from
-                                                   # the template's `resources` section
-
-{ get_attr: [<resource_name>, <atttribute_name>]}  # retrieves an attribute's value from
-                                                   # the named resource
-
-str_replace:                                       # inserts a string defined by `template`
-  template: <string template>                      # e.g. "http://%ip%/wordpress"
-  params:                                          # the definition of the params in the template
-    <param dictionary>                             # e.g. "%ip%": { get_attr: [ lb, public_ip ] }
-
-```
+__Template Outputs: Want to know more?__ Along with the `outputs` section, this tutorial introduces one of <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec-intrinsic-functions" target="_blank">HOT's Intrinsic Functions</a>.
 
 If you're not sure where to go next, try [the next tutorial](/108.Template-Parameters).

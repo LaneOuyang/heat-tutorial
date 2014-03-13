@@ -2,18 +2,18 @@ heat_template_version: 2013-05-23
 
 description: |
   Heat Orchestration Template that spins up a single Rackspace Cloud Server 
-  and outputs the server's public IP address. Adding a `parameters` section
+  and outputs the server public IP address. Adding a `parameters` section
   would make this template more useful.
 
 resources:
   compute_instance:
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 1GB Standard Instance
-      image: CentOS 6.4
+      image: CentOS 6.5
       name: Simplest Stack In The World
 
 outputs:
   compute_public_ip:
     description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, public_ip]}
+    value: { get_attr: [compute_instance, first_address]}
