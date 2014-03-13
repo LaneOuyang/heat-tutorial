@@ -59,4 +59,11 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 
 __Compute Instances: Want to know more?__ For a complete list of properties see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Nova::Server" target="_blank">OpenStack documentation</a>.
 
+__NOTE:__ If you need to do things with user_data, you will need to add the following to your template:
+
+```yaml
+  config_drive: "true" #quotes are required
+  user_data_format: RAW
+```
+
 If you're not sure where to go next, try [the next tutorial](/102.Hello-CloudLB).
