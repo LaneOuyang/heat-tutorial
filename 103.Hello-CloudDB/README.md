@@ -63,6 +63,6 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Cloud Database: Want to know more?__ For a complete list of properties see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Trove::Instance" target="_blank">OpenStack documentation</a>
+__Cloud Database: Want to know more?__ For a complete list of properties see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Trove::Instance" target="_blank">OpenStack documentation</a>.
 
 If you're not sure where to go next, try [the next tutorial](/104.Hello-CloudDNS).

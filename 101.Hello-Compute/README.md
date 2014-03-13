@@ -20,11 +20,11 @@ heat_template_version: 2013-05-23
 
 resources:
   compute_instance: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 1GB Standard Instance
-      image: CentOS 6.4
-      name: Simplest Stack In The World
+      image: CentOS 6.5
+      name: Single Compute Instance
 ```
 </br>
 ### 3. Spin It Up!
@@ -57,15 +57,6 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Compute Instances: Want to know more?__ For a complete list of properties, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
-
-```yaml
-flavor: 1GB Standard Instance     # REQUIRED. Check Rackspace documentation for valid flavors.
-image: CentOS 6.4                 # REQUIRED. Check Rackspace documentation for valid images.
-user_data: "some-valid-id-string"
-key_name: name-of-your-key-pair
-Volumes:                          # Value must be a List.
-name: Your Cloud Server Name
-```
+__Compute Instances: Want to know more?__ For a complete list of properties see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Nova::Server" target="_blank">OpenStack documentation</a>.
 
 If you're not sure where to go next, try [the next tutorial](/102.Hello-CloudLB).
