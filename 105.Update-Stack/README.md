@@ -19,10 +19,10 @@ heat_template_version: 2013-05-23
 
 resources:
   compute_instance: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 1GB Standard Instance
-      image: CentOS 6.4
+      image: CentOS 6.5
       name: My Compute Instance
 ```
 </br>
@@ -56,10 +56,10 @@ heat_template_version: 2013-05-23
 
 resources:
   compute_instance: # You can name this whatever you prefer
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       flavor: 2GB Standard Instance
-      image: CentOS 6.4
+      image: CentOS 6.5
       name: My Compute Instance
 ```
 
