@@ -25,7 +25,7 @@ description: |
 parameters:
   compute_flavor:
     description: flavor id for the compute instance
-    type: String
+    type: string
     default: 1 GB Performance
     constraints:
     - allowed_values:
@@ -38,37 +38,30 @@ parameters:
 
   compute_image:
     description: Image name for the compute instance
-    type: String
-    default: CentOS 6.4
+    type: string
+    default: CentOS 6.5
     constraints:
     - allowed_values:
-      - CentOS 6.4
+      - CentOS 6.5
       - CentOS 5.10
-      - Arch 2013.9
-      - Ubuntu 13.10
-      - Ubuntu 12.10
+      - Arch 2014.2 (PVHVM)
+      - Ubuntu 13.10 (Saucy Salamander)
       description: Must be a valid Rackspace Cloud Server image name.
 
 resources:
   compute_instance:
-    type: "Rackspace::Cloud::Server"
+    type: OS::Nova::Server
     properties:
+      config_drive: "true"
+      user_data_format: RAW
       flavor: { get_param: compute_flavor }
       image: { get_param: compute_image }
       name: Single Cloud Server compute instance
 
 outputs:
-  compute_public_ip:
-    description: The public IP address to the cloud server
-    value: { get_attr: [compute_instance, public_ip]}
-
-  image_used:
-    description: The image this compute instance was built upon
-    value: { get_attr: [compute_instance, image]}
-
-  flavor_used:
-    description: The flavor used to build this compute instance
-    value: { get_attr: [compute_instance, flavor]}
+  server_details:
+    description: All details for the server
+    value: { get_attr: [compute_instance, show]}
 ```
 </br>
 ### 3. Spin It Up!
@@ -88,7 +81,7 @@ You'll need to wait until the stack has been successfully created (`heat stack-l
 heat stack-show Single-Compute-Stack
 ```
 
-In the `outputs` section you should see `image` listed as "Arch 2013.9" and `flavor` listed as "2 GB Performance".
+In the `outputs` section you should see an `image` section and a `flavor` section among many other server details.
 
 __Congratulations!__ You have successfully added and used parameters in your template, making the resulting stack much more useful! There's only one thing left to do...
 </br>
@@ -104,14 +97,6 @@ You should see the status reported as `DELETE_IN_PROGRESS`. If you check again i
 </br>
 ### 6. CONGRATULATIONS! You're Done!
 
-__Template Parameters: Want to know more?__ Along with the `parameters` section, this tutorial introduces some of Cloud Server's attributes. For a complete list of attributes, the source of truth is <a href="https://github.com/openstack/heat/blob/master/contrib/rackspace/heat/engine/plugins/cloud_server.py" target="_blank">the code</a>. Here is the guaranteed-to-be-out-of-date-as-soon-as-it-is-published list:
-
-* distro
-* flavor
-* image
-* private_ip
-* private_key
-* public_ip
-* server
+__Template Parameters: Want to know more?__ Along with the `parameters` section, this tutorial introduces some of Cloud Server's attributes. For more information on parameters see the <a href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#parameters-section" target="_blank">HoT specification</a>. For a full list of Cloud Server attributes see the <a href="http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Nova::Server" target="_blank">OpenStack documentation</a>.
 
 If you're not sure where to go next, try [the next tutorial](/109.Resource-Groups).
