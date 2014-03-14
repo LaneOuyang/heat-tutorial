@@ -6,10 +6,10 @@ resources:
     properties:
       count: 2
       resource_def:
-        type: Rackspace::Cloud::Server
+        type: OS::Nova::Server
         properties:
           flavor: 1GB Standard Instance
-          image: CentOS 6.4
+          image: CentOS 6.5
           name: LB-Compute Web Nodes
 
   lb:
@@ -17,7 +17,7 @@ resources:
     properties:
       name: LB-Compute Load Balancer
       nodes:
-      - addresses: { get_attr: [web_nodes, PrivateIp]} # This is where the
+      - addresses: { get_attr: [web_nodes, accessIPv4]} # This is where the
                                                        # wiring magic happens
         port: 80
         condition: ENABLED

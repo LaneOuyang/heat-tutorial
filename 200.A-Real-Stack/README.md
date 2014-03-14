@@ -25,10 +25,10 @@ resources:
     properties:
       count: 2
       resource_def:
-        type: Rackspace::Cloud::Server
+        type: OS::Nova::Server
         properties:
           flavor: 1GB Standard Instance
-          image: CentOS 6.4
+          image: CentOS 6.5
           name: LB-Compute Web Nodes
 
   lb:
@@ -36,7 +36,7 @@ resources:
     properties:
       name: LB-Compute Load Balancer
       nodes:
-      - addresses: { get_attr: [web_nodes, PrivateIp]} # This is where the
+      - addresses: { get_attr: [web_nodes, accessIPv4]} # This is where the
                                                        # wiring magic happens
         port: 80
         condition: ENABLED
@@ -55,10 +55,6 @@ resources:
         ipVersion: IPV4
 
 outputs:
-  web_node_resources:
-    description: The actual compute instance details
-    value: { get_attr: [web_nodes, refs]}
-
   lb_public_ip:
     description: The public IP address of the load balancer
     value: { get_attr: [lb, PublicIp]}
@@ -78,7 +74,7 @@ You should get a list of your stacks, including one with a `stack_name` of "LB-C
 heat stack-show LB-Compute-Example
 ```
 
-You should see details for two cloud servers as well as the public IP address for your load balancer.
+You should see the public IP address for your load balancer!
 
 __Congratulations!__ You have successfully spun up your first Resource Group. Of course there is no web server running on the web-nodes, so the only thing we can do at this point is something like ping the IP address (or maybe try a telnet connection to port 80). There's only one thing left to do...
 </br>

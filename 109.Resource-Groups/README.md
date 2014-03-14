@@ -25,10 +25,10 @@ resources:
     properties:
       count: 2
       resource_def:
-        type: Rackspace::Cloud::Server
+        type: OS::Nova::Server
         properties:
           flavor: 1GB Standard Instance
-          image: CentOS 6.4
+          image: CentOS 6.5
           name: Scaling Out!
 
 outputs:
